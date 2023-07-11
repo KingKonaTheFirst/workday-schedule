@@ -1,14 +1,26 @@
 var date = dayjs().format('dddd MMMM Do');
 var time = dayjs().format('HH');
-var descriptionEl = document.querySelectorAll('.description')
-var dataTimeTypeEl = document.getElementsByClassName('hour')
-var currentDayEl = document.getElementById('currentDay')
+var description = document.querySelectorAll('.description')
+var dataTimeType = document.getElementsByClassName('hour')
+var currentDay = document.getElementById('currentDay')
+
+
 
 console.log(date);
 console.log(time);
-$(function () {
- 
- 
+$(function checktime() {
+  for (i = 0; i < 9; i++){
+      dataTimeType[i].getAttribute("data-time");
+      if (dataTimeType[i].dataset.time > parseInt(time)) {
+        description[i].classList.add('future');
+    }  else if (dataTimeType[i].dataset.time < parseInt(time)) {
+        description[i].classList.add('past');
+    } else {
+        description[i].classList.add('present');
+
+
+  }}
+  checktime();
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
