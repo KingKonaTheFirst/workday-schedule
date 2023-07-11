@@ -1,4 +1,4 @@
-var date = dayjs().format('dddd MMMM Do');
+var date = dayjs().format('dddd MMMM D');
 var time = dayjs().format('HH');
 var description = document.querySelectorAll('.description')
 var dataTimeType = document.getElementsByClassName('hour')
@@ -8,6 +8,7 @@ var currentDay = document.getElementById('currentDay')
 
 console.log(date);
 console.log(time);
+// check the time and adds/changes the class in the html to change the color of the blocks
 $(function checktime() {
   for (i = 0; i < 9; i++){
       dataTimeType[i].getAttribute("data-time");
@@ -17,9 +18,9 @@ $(function checktime() {
         description[i].classList.add('past');
     } else {
         description[i].classList.add('present');
-
-
-  }}
+    }
+  }
+});
   checktime();
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -48,4 +49,4 @@ $(function checktime() {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
+
