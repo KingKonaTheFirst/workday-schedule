@@ -3,7 +3,7 @@ var date = dayjs().format("dddd MMMM D");
 
 // check the time and adds/changes the class in the html to change the color of the blocks
 $(function () {
-  let hour = dayjs().hour();
+  let hour = dayjs().hour() - 7;
 
   $(".time-block").each(function () {
     var currentHourEl = $(this).attr("id").split("-")[1];
